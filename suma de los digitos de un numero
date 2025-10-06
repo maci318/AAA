@@ -3,19 +3,21 @@ using namespace std;
 
 int main()
 {
-    int n, d, suma;
+    int n, d,i;
     cout<<"ingrese un numero: ";
     cin>>n;
-    suma=0;
-    cout<<"la suma de los digitos "<<n;
+    i=0;
+    int p=n;
     while(n>0)
     {
         d=n%10;
+        i=i*10+d;
         n=n/10;
-        suma=suma+d;
+        
     }
-    cout<<" es; "<<suma<<endl;
-    
+    cout << "El numero invertido de " << p << " es: " << i << endl;
+
 
     return 0;
 }
+    
