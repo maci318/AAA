@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, d, suma;
+    cout<<"ingrese un numero: ";
+    cin>>n;
+    suma=0;
+    cout<<"la suma de los digitos "<<n;
+    while(n>0)
+    {
+        d=n%10;
+        n=n/10;
+        suma=suma+d;
+    }
+    cout<<" es; "<<suma<<endl;
+    
+
+    return 0;
+}
