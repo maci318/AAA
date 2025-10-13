@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int m, mt, dd, t;
+    double p=0.01, d;
+    do
+    {
+        cout<<"ingresa el monto de la compra del cliente: ";
+        cin>>m;
+    }while(m<0);   
+    d=(double)10*p;
+    if(m>300)
+    {
+        dd=m*d;
+        mt=m-dd;
+        cout<<"el monto a pagar con un descuento del 10% de Bs. "<<m<<" es: "<<mt<<endl;
+        return 0;
+    }
+    else
+        cout<<"el monto a pagar es: "<<m<<endl;
+
+    return 0;
+}
