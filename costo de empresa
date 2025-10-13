@@ -18,9 +18,12 @@ int main()
     }while(c<0);
     do
     {
-        cout<<"ingresa la cantidad del descuento: ";
-        cin>>d;
-    }while(d<0);    
+        do
+        {
+            cout<<"ingresa la cantidad del descuento: ";
+            cin>>d;
+        }while(d<0); 
+    }while(d>99);   
     t=p*c;
     q=(double)d*pp;
     td=t*q;
