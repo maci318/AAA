@@ -1,0 +1,103 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int contarmayor(int a, int b, int c);
+int sumaserie(int x);
+double productos(int cantidadProductos);
+
+int main() {
+    int opcion;
+    int a, b, c;
+
+    do {
+        // Menú de opciones
+        cout << "\nElige una opción:\n";
+        cout << "1. Determinar el mayor de tres números\n";
+        cout << "2. Calcular la serie con ciclo For\n";
+        cout << "3. Calcular el peso total de productos\n";
+        cout << "4. Salir\n";
+        cout << "Opción: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1: {
+                cout << "Introduce el primer número: ";
+                cin >> a;
+                cout << "Introduce el segundo número: ";
+                cin >> b;
+                cout << "Introduce el tercer número: ";
+                cin >> c;
+                cout<<contarmayor(a,b,c)<<endl;
+
+                break;
+            }
+
+            case 2: {
+                int x;
+                cout << "Introduce el valor de x: ";
+                cin >> x;
+                cout << "La suma total de la serie es: " << sumaserie(x) << endl;
+                break;
+            }
+
+            case 3: {
+                int cantidadProductos;
+                cout << "¿Cuántos productos deseas ingresar? ";
+                cin >> cantidadProductos;
+
+                cout << "El peso total de los productos es: " 
+                     << productos(cantidadProductos) << " gramos.\n";
+                break;
+            }
+
+            case 4:
+                cout << "¡Hasta luego!\n";
+                break;
+
+            default:
+                cout << "Opción no válida. Intenta de nuevo.\n";
+                break;
+        }
+
+    } while (opcion != 4);
+
+    return 0;
+}
+
+int contarmayor(int a, int b, int c) {
+    if (a == b && b == c) {
+        cout << "Todos los números son: " ;
+        return a;
+    } else if (a > b && a > c) {
+        cout << "El mayor número es: " ;
+        return a;
+    } else if (b > a && b > c) {
+        cout << "El mayor número es: " ;
+        return b;
+    } else {
+        cout << "El mayor número es: " ;
+        return c;
+    }
+
+}
+
+int sumaserie(int x) {
+    int s = 0;
+    for (int i = 1; i <= 10; i++) {
+        s += pow(x, i);
+    }
+    return s;
+}
+
+double productos(int cantidadProductos) {
+    double pesoTotal = 0.0;
+    for (int i = 1; i <= cantidadProductos; i++) {
+        double peso;
+        cout << "Ingresa el peso del producto " << i << " (en gramos): ";
+        cin >> peso;
+        pesoTotal += peso;
+    }
+    return pesoTotal;
+}
+
