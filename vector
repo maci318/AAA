@@ -1,0 +1,38 @@
+#include <iostream>
+#define MAX 100
+
+using namespace std;
+
+void cargar(int vec[], int n);
+float promedio(int vec[], int tam);
+
+void main() {
+	int tam, n, m, A[MAX], B[MAX], C[MAX];
+	do 
+	{
+		cout << "Ingresar el tamaño del primer vector:";
+		cin >> n;
+	} while ((n <= 0) || (n > MAX));
+	cargar(A, n);
+	cout<<"el promedio de la suma de los vectores es: "<<promedio(A, n)<<endl;
+	
+}
+
+void cargar(int vec[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Vector[" << i << "]= ";
+		cin >> vec[i];
+	}
+}
+float promedio(int vec[], int tam)
+{
+	float suma = 0;
+	for (int i = 0 ;i < tam; i++)
+	{
+		suma = suma + vec[i];
+	}
+	return suma / tam;
+
+}
